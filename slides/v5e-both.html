@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="common.css">
+<link rel="stylesheet" href="phone.css">
+<link rel="stylesheet" href="sky.css">
+<title>Guardian Agent: Sky, Desktop and Phone</title>
+<style>
+  h1 { position: absolute; left: 112px; top: 300px; width: 860px; font-size: 100px; line-height: 1.02; }
+  .lead { position: absolute; left: 112px; top: 760px; width: 760px; }
+  .app-win { position: absolute; left: 960px; top: 10px; width: 640px; height: 1000px; border: 0; transform: scale(1.02); transform-origin: top left; }
+  .iphone { --w: 400px; position: absolute; right: 70px; top: 300px; }
+  .ios-notif { font-size: 1.05em; }
+</style>
+</head>
+<body>
+<main class="slide">
+  <div class="lockup"><img src="../assets/logo-navy.svg" alt="">Guardian Agent</div>
+  <h1>A world where children can connect and play <em>safely online.</em></h1>
+  <p class="lead">Grooming alerts from in-game voice and text chat. The AI runs on your child's PC.</p>
+  <iframe class="app-win" src="../assets/app/status-full.html#light" title="Guardian Agent desktop app" scrolling="no"></iframe>
+  <div class="iphone"><div class="iphone__bezel"><div class="iphone__screen">
+    <div class="iphone__island"></div>
+    <div class="lock">
+      <div class="lock__date">Friday 16 October</div>
+      <div class="lock__time">21:47</div>
+      <div class="lock__stack">
+        <div class="ios-notif">
+          <img class="ios-notif__icon" src="../assets/app-icon.svg" alt="">
+          <div>
+            <div class="ios-notif__top"><span class="ios-notif__app">Guardian Agent</span><span class="ios-notif__time">now</span></div>
+            <div class="ios-notif__title">Possible grooming in Fortnite</div>
+            <div class="ios-notif__body">Someone in voice chat asked your child to meet in person.</div>
+          </div>
+        </div>
+      </div>
+      <div class="lock__bar"></div>
+    </div>
+  </div></div></div>
+</main>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Guardian Agent status window</title>
+<link rel="stylesheet" href="css/theme.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/frame.css">
+<script>document.documentElement.dataset.theme = (location.hash.slice(1) || 'light');</script>
+<style>
+  html, body { background: transparent !important; margin: 0; }
+  body { padding: 60px; }
+  .frame__chrome { box-shadow: 0 30px 60px -20px rgb(16 24 40 / .35), 0 8px 20px -8px rgb(16 24 40 / .18); }
+</style>
+</head>
+<body>
+
+<!-- Icon sprite: 24 px grid, stroke icons coloured with currentColor. Copy into each window page. -->
+<svg class="visually-hidden" aria-hidden="true" focusable="false">
+  <symbol id="i-shield-check" viewBox="0 0 24 24"><path d="M12 2.8 20 7.4v9.2L12 21.2 4 16.6V7.4z"/><path d="m8.6 12.1 2.4 2.4 4.5-4.7"/></symbol>
+  <symbol id="i-shield-pause" viewBox="0 0 24 24"><path d="M12 2.8 20 7.4v9.2L12 21.2 4 16.6V7.4z"/><path d="M10 9.4v5.2M14 9.4v5.2"/></symbol>
+  <symbol id="i-shield-alert" viewBox="0 0 24 24"><path d="M12 2.8 20 7.4v9.2L12 21.2 4 16.6V7.4z"/><path d="M12 8v4.6M12 16h.01"/></symbol>
+  <symbol id="i-shield-slash" viewBox="0 0 24 24"><path d="M12 2.8 20 7.4v9.2L12 21.2 4 16.6V7.4z"/><path d="M5.5 5.5l13 13"/></symbol>
+  <symbol id="i-shield-dashed" viewBox="0 0 24 24"><path d="M12 2.8 20 7.4v9.2L12 21.2 4 16.6V7.4z" stroke-dasharray="3.1 2.5"/></symbol>
+  <symbol id="i-unlink" viewBox="0 0 24 24"><path d="M9 17H7A5 5 0 0 1 7 7h1M15 7h2a5 5 0 0 1 4 8M8 12h3"/><path d="m3 3 18 18"/></symbol>
+  <symbol id="i-alert" viewBox="0 0 24 24"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/><path d="M12 9v4M12 17h.01"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7.5a4 4 0 0 1 8 0V11"/></symbol>
+  <symbol id="i-key" viewBox="0 0 24 24"><circle cx="8" cy="15" r="4"/><path d="m10.8 12.2 8.7-8.7M16.5 6.5 19 9M14 9l2 2"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
+  <symbol id="i-copy" viewBox="0 0 24 24"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+  <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol>
+  <symbol id="i-eye-off" viewBox="0 0 24 24"><path d="M9.9 4.2A10 10 0 0 1 12 4c6.5 0 10 8 10 8a17 17 0 0 1-2.2 3.2M6.6 6.6C3.6 8.5 2 12 2 12s3.5 8 10 8a10 10 0 0 0 5.4-1.6"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="m2 2 20 20"/></symbol>
+  <symbol id="i-monitor" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></symbol>
+  <symbol id="i-mic" viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></symbol>
+  <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></symbol>
+  <symbol id="i-sync" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 1-14.3 4.9M4 12a8 8 0 0 1 14.3-4.9"/><path d="M18.5 3v4.5H14M5.5 21v-4.5H10"/></symbol>
+  <symbol id="i-card" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18M7 15h4"/></symbol>
+  <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></symbol>
+  <symbol id="i-x-circle" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m15 9-6 6M9 9l6 6"/></symbol>
+  <symbol id="i-external" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9"/><path d="M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></symbol>
+  <symbol id="i-wifi-off" viewBox="0 0 24 24"><path d="M2 8.8a15 15 0 0 1 4.2-2.6M10.7 5.1A15 15 0 0 1 22 8.8M5 12.9a10 10 0 0 1 5.2-2.7M16.5 11.3a10 10 0 0 1 2.5 1.6M8.5 16.4a5 5 0 0 1 7 0M12 20h.01"/><path d="m2 2 20 20"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><path d="M7 4.5v15l12-7.5z"/></symbol>
+</svg>
+<figure class="frame" style="margin:0">
+        <div class="frame__chrome">
+          <div class="frame__titlebar" aria-hidden="true"><span class="frame__dots"><i></i><i></i><i></i></span>Guardian Agent</div>
+          <div class="window size-480x640">
+            <section class="card card--glow hero" aria-live="polite" aria-label="Status">
+              <span class="hero__icon"><svg class="icon icon--xl" aria-hidden="true"><use href="#i-shield-check"/></svg></span>
+              <span class="hero__text">
+                <span class="hero__title">Protecting</span>
+                <span class="hero__sub">since 09:12 today</span>
+              </span>
+            </section>
+            <div class="window__body">
+              <ul class="list card card--flush">
+                <li class="row">
+                  <span class="row__icon"><svg class="icon" aria-hidden="true"><use href="#i-card"/></svg></span>
+                  <span class="row__main">
+                    <span class="row__label">Subscription</span>
+                    <span class="row__value row__value--pill">Family plan<span class="status-pill status-pill--active status-pill--sm"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Active</span></span>
+                    <span class="row__meta">Manage your subscription at guardianagent.me from your own device</span>
+                  </span>
+                </li>
+                <li class="row">
+                  <span class="row__icon"><svg class="icon" aria-hidden="true"><use href="#i-sync"/></svg></span>
+                  <span class="row__main"><span class="row__label">Connection</span><span class="row__value">Last check-in 2 min ago</span></span>
+                </li>
+                <li class="row">
+                  <span class="row__icon"><svg class="icon" aria-hidden="true"><use href="#i-monitor"/></svg></span>
+                  <span class="row__main"><span class="row__label">Screen</span><span class="row__value">Display 1</span></span>
+                  <span class="row__end ok"><span class="ok__mark"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-check"/></svg></span><span class="visually-hidden">Working</span></span>
+                </li>
+                <li class="row">
+                  <span class="row__icon"><svg class="icon" aria-hidden="true"><use href="#i-mic"/></svg></span>
+                  <span class="row__main"><span class="row__label">Voice chat</span><span class="row__value">On</span></span>
+                  <span class="row__end ok"><span class="ok__mark"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-check"/></svg></span><span class="visually-hidden">Working</span></span>
+                </li>
+                <li class="row">
+                  <span class="row__icon"><svg class="icon" aria-hidden="true"><use href="#i-globe"/></svg></span>
+                  <span class="row__main"><span class="row__label">Speech languages</span><span class="row__value">English, Dutch</span></span>
+                </li>
+              </ul>
+            </div>
+            <div class="btn-row">
+              <button class="btn btn--secondary" type="button">Pause…<svg class="icon btn__lock" aria-hidden="true"><use href="#i-lock"/></svg><span class="visually-hidden">(parent PIN)</span></button>
+              <button class="btn btn--secondary" type="button">Settings…<svg class="icon btn__lock" aria-hidden="true"><use href="#i-lock"/></svg><span class="visually-hidden">(parent PIN)</span></button>
+            </div>
+            <p class="fineprint window__meta"><a href="#">What is Guardian Agent?</a><span class="window__meta-ids"><span>Version <span class="mono">0.1.0</span></span><span>Device <span class="mono">7F3A-21C9</span></span></span></p>
+          </div>
+        </div>
+</figure></body></html>

@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="common.css">
+<link rel="stylesheet" href="phone.css">
+<link rel="stylesheet" href="sky.css">
+<title>Guardian Agent: Sky, Desktop</title>
+<style>
+  h1 { position: absolute; left: 112px; top: 190px; width: 1000px; font-size: 92px; line-height: 1.02; }
+  .lead { position: absolute; left: 112px; top: 540px; width: 940px; }
+  .app-win { position: absolute; left: 1150px; top: 20px; width: 640px; height: 1000px; border: 0; transform: scale(1.12); transform-origin: top left; }
+  .foot { position: absolute; left: 112px; top: 830px; width: 1000px; display: grid; grid-template-columns: auto 1fr auto; gap: 28px; align-items: center; padding-top: 32px; border-top: 3px solid var(--navy); }
+  .schools { background: #fff; border-radius: 18px; padding: 10px 14px; } .schools img { height: 76px; }
+  .team { display: flex; align-items: center; gap: 18px; font-size: 22px; line-height: 1.3; white-space: nowrap; }
+  .team img { height: 96px; width: auto; transform: rotate(-2.5deg); box-shadow: 0 14px 28px -12px rgb(0 0 0 / 0.45); }
+  .beta { display: flex; align-items: center; gap: 16px; } .beta span { font-family: var(--head); font-weight: 700; font-size: 26px; line-height: 1.1; text-align: right; white-space: nowrap; }
+  .beta .qr { width: 124px; padding: 10px; }
+</style>
+</head>
+<body>
+<main class="slide">
+  <div class="lockup"><img src="../assets/logo-navy.svg" alt="">Guardian Agent</div>
+  <h1>A world where children can connect and play <em>safely online.</em></h1>
+  <p class="lead">Real-time grooming alerts from in-game voice and text chat. The AI runs on your child's PC.</p>
+  <iframe class="app-win" src="../assets/app/status-full.html#light" title="Guardian Agent desktop app" scrolling="no"></iframe>
+  <div class="foot">
+    <div class="schools"><img src="../assets/schools.png" alt="UWC Maastricht, ISA, The International School of The Hague"></div>
+    <div class="team"><img src="../assets/team-polaroid.png" alt=""><div><span class="who"><b>Marom</b>Founding Engineer @ Biscuit</span><span class="who"><b>Oliver</b>AI Engineer @ Prosus</span><span class="deg">Both MSc AI graduates, UvA</span></div></div>
+    <div class="beta"><span>Join<br>the beta</span><div class="qr"><img src="../assets/qr-beta.png" alt="QR code to the beta"></div></div>
+  </div>
+</main>
+</body>
+</html>
