@@ -1,0 +1,389 @@
+/*
+ * Gallery page only (gallery.html, dev review). The app's windows never load this file.
+ */
+
+.gallery {
+  min-height: 100vh;
+  background: radial-gradient(90% 40% at 50% 0%, rgb(var(--primary-9-rgb) / 0.1), transparent 70%),
+    linear-gradient(180deg, var(--neutral-2), var(--neutral-1) 40%);
+}
+
+.g-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  border-bottom: 1px solid var(--border);
+  background: rgb(var(--neutral-1-rgb) / 0.75);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+}
+
+.g-header__inner {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: var(--space-3) var(--space-8);
+}
+
+.g-header__nav {
+  display: flex;
+  gap: var(--space-5);
+  margin-left: var(--space-6);
+  font-size: var(--text-sm);
+}
+
+.g-header__nav a {
+  color: var(--text-muted);
+  text-decoration: none;
+}
+
+.g-header__nav a:hover {
+  color: var(--text);
+}
+
+.g-theme {
+  display: inline-flex;
+  margin-left: auto;
+  padding: 3px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-control);
+  background: var(--glass-bg);
+}
+
+.g-theme .btn {
+  min-height: 28px;
+  padding: 0 var(--space-3);
+  font-size: var(--text-sm);
+  border-radius: 4px;
+}
+
+.g-theme .btn[aria-pressed="true"] {
+  background: var(--neutral-3);
+  color: var(--text);
+}
+
+.g-main {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: var(--space-8) var(--space-8) 96px;
+}
+
+.g-intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+  max-width: 640px;
+  margin: 24px auto 64px;
+  padding: var(--space-8) var(--space-8) var(--space-6);
+  text-align: center;
+}
+
+.g-headline {
+  font-family: var(--font-heading);
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+}
+
+.g-intro .lead {
+  font-size: var(--text-md);
+  max-width: 480px;
+}
+
+.g-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  margin-top: 72px;
+}
+
+.g-section__head {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  max-width: 760px;
+}
+
+.g-section__title {
+  font-size: 30px;
+}
+
+.g-sub {
+  font-size: var(--text-lg);
+  font-weight: 600;
+}
+
+.g-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  gap: var(--space-5);
+  align-items: start;
+}
+
+.g-grid--2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-8);
+}
+
+.g-section > .g-sub:not(:first-of-type) {
+  margin-top: var(--space-6);
+}
+
+.g-panel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.g-label {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+}
+
+.g-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+/* Colour swatches */
+.g-swatches {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(92px, 1fr));
+  gap: var(--space-2);
+}
+
+.g-swatch {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.g-swatch b {
+  font-weight: 600;
+  color: var(--text);
+}
+
+.g-swatch__chip {
+  height: 44px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.sw-n1 { background: var(--neutral-1); }
+.sw-n2 { background: var(--neutral-2); }
+.sw-n3 { background: var(--neutral-3); }
+.sw-n5 { background: var(--neutral-5); }
+.sw-n7 { background: var(--neutral-7); }
+.sw-n9 { background: var(--neutral-9); }
+.sw-n11 { background: var(--neutral-11); }
+.sw-n12 { background: var(--neutral-12); }
+.sw-p3 { background: var(--primary-3); }
+.sw-p5 { background: var(--primary-5); }
+.sw-p7 { background: var(--primary-7); }
+.sw-p9 { background: var(--primary-9); }
+.sw-p11 { background: var(--primary-11); }
+.sw-p12 { background: var(--primary-12); }
+.sw-pc { background: var(--primary-contrast); }
+.sw-w3 { background: var(--warning-3); }
+.sw-w7 { background: var(--warning-7); }
+.sw-w11 { background: var(--warning-11); }
+.sw-d3 { background: var(--danger-3); }
+.sw-d7 { background: var(--danger-7); }
+.sw-d9 { background: var(--danger-9); }
+.sw-d11 { background: var(--danger-11); }
+
+.g-radius {
+  display: grid;
+  place-items: center;
+  width: 88px;
+  height: 56px;
+  border: 1px solid var(--primary-7);
+  background: rgb(var(--primary-3-rgb) / 0.4);
+  font-size: var(--text-xs);
+  color: var(--primary-11);
+}
+
+.g-radius--6 { border-radius: var(--radius-control); }
+.g-radius--10 { border-radius: var(--radius-component); }
+.g-radius--14 { border-radius: var(--radius-container); }
+
+.g-type-sample {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.g-type-h {
+  font-family: var(--font-heading);
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.g-type-h600 {
+  font-family: var(--font-heading);
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.g-type-body {
+  font-size: var(--text-base);
+}
+
+.g-type-body500 {
+  font-weight: 500;
+}
+
+.g-type-body600 {
+  font-weight: 600;
+}
+
+.g-type-mono {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: 20px;
+}
+
+/* Component demo: a small window-like surface so glass has something to sit on. */
+.g-demo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  padding: var(--space-5);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-container);
+  background: var(--window-backdrop), var(--bg);
+}
+
+/* Window frames */
+.g-frames {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 40px 32px;
+}
+
+.frame {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  width: min-content;
+  margin: 0;
+}
+
+.frame__caption {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
+}
+
+.frame__name {
+  font-weight: 600;
+  color: var(--text);
+}
+
+.frame__size {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+}
+
+.frame__note {
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+}
+
+.frame__chrome {
+  overflow: hidden;
+  border: 1px solid var(--border-strong);
+  border-radius: 12px;
+  box-shadow: 0 30px 60px -30px rgb(0 0 0 / 0.55), 0 0 0 1px rgb(0 0 0 / 0.15);
+}
+
+.frame__titlebar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+  border-bottom: 1px solid var(--border);
+  background: var(--neutral-2);
+  font-size: var(--text-xs);
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.frame__dots {
+  position: absolute;
+  left: 12px;
+  display: flex;
+  gap: 7px;
+}
+
+.frame__dots i {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: var(--neutral-5);
+}
+
+/* Window sizes (inner size, as in tauri.conf.json). */
+.frame .window {
+  height: auto;
+}
+
+.frame .size-360x300 { width: 360px; height: 300px; }
+.frame .size-400x250 { width: 400px; height: 250px; }
+.frame .size-400x300 { width: 400px; height: 300px; }
+.frame .size-400x440 { width: 400px; height: 440px; }
+.frame .size-420x420 { width: 420px; height: 420px; }
+.frame .size-420x560 { width: 420px; height: 560px; }
+.frame .size-480x640 { width: 480px; height: 640px; }
+
+/* Simulated keyboard focus, so the static page can show the focus ring. */
+.g-focus,
+.pin__digit.g-focus {
+  border-color: var(--primary-9);
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+.pin__digit.g-focus {
+  outline-offset: 1px;
+  box-shadow: 0 0 20px -8px var(--primary-9);
+}
+
+.g-states {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--space-4);
+}
+
+.g-note {
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+}
+
+.g-footer {
+  margin-top: 96px;
+  padding-top: var(--space-5);
+  border-top: 1px solid var(--border);
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+}
+
+.g-panel--wide {
+  flex: 1 1 560px;
+  min-width: 0;
+}

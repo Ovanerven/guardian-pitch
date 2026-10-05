@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Guardian Agent: Photo</title>
+<link rel="stylesheet" href="common.css">
+<style>
+  .slide { background: #fff; }
+  .photo { position: absolute; right: 0; top: 0; width: 900px; height: 1080px; object-fit: cover; object-position: 35% 50%; }
+  .lockup { position: absolute; left: 112px; top: 76px; }
+  h1 { position: absolute; left: 112px; top: 210px; width: 820px; font-size: 100px; }
+  h1 em { font-style: normal; color: var(--sky-ink); }
+  .points { position: absolute; left: 112px; top: 600px; width: 800px; list-style: none; padding: 0; margin: 0; display: grid; gap: 26px; }
+  .points li { display: flex; align-items: center; gap: 22px; font-size: 34px; font-weight: 500; line-height: 1.2; }
+  .points svg { width: 52px; height: 52px; flex: none; padding: 11px; border-radius: 14px; background: var(--sky-pale); stroke: var(--sky-ink); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .team { position: absolute; left: 112px; bottom: 64px; display: flex; align-items: center; gap: 22px; font-size: 26px; }
+  .team img { height: 180px; width: auto; transform: rotate(-2.5deg); box-shadow: 0 14px 28px -12px rgb(0 0 0 / 0.45), 0 2px 6px -2px rgb(0 0 0 / 0.25); }
+  .team b { display: block; font-weight: 600; }
+  .team span { display: block; color: var(--ink-2); }
+  .team .who b { color: var(--ink); }
+  .alert { position: absolute; left: 1090px; top: 600px; }
+  .alert .notif { font-size: 28px; width: 22em; }
+  .beta { position: absolute; right: 64px; bottom: 64px; display: flex; align-items: center; gap: 20px; padding: 18px 18px 18px 28px; background: #fff; border-radius: 26px; }
+  .beta span { font-family: var(--head); font-weight: 700; font-size: 30px; line-height: 1.1; }
+  .beta .qr { width: 150px; padding: 0; }
+</style>
+</head>
+<body>
+<main class="slide">
+  <img class="photo" src="../assets/kid-gaming.png" alt="A child gaming with headphones">
+  <div class="lockup"><img src="../assets/logo.svg" alt="">Guardian Agent</div>
+  <h1>Do you know who your kid talks to <em>online?</em></h1>
+
+  <ul class="points">
+    <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a3 3 0 0 0-3 3v6a3 3 0 0 0 6 0V6a3 3 0 0 0-3-3z"/><path d="M19 11a7 7 0 0 1-14 0M12 18v3"/></svg>Catches grooming in voice and text chat</li>
+    <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7.5a4 4 0 0 1 8 0V11"/></svg>Runs fully on the child's PC</li>
+    <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10 12 5l9 5-9 5z"/><path d="M7 12.5V17c3 2 7 2 10 0v-4.5"/></svg>Piloting in schools, launching November</li>
+  </ul>
+
+  <div class="team"><img src="../assets/team-polaroid.png" alt=""><div><span class="who"><b>Marom Sverdlov</b>Founding Engineer @ Biscuit</span><span class="who"><b>Oliver van Erven</b>AI Engineer @ Prosus</span><span class="deg">Both MSc AI graduates, UvA</span></div></div>
+
+  <div class="alert">
+    <div class="notif">
+      <img class="notif__icon" src="../assets/app-icon.svg" alt="">
+      <div class="notif__main">
+        <div class="notif__head"><span>Guardian Agent</span><span>now</span></div>
+        <div class="notif__title">Fortnite: possible grooming</div>
+        <div class="notif__body">Someone asked your child to meet in person.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="beta"><span>Join<br>the beta</span><div class="qr"><img src="../assets/qr-beta.png" alt="QR code to the beta"></div></div>
+</main>
+</body>
+</html>

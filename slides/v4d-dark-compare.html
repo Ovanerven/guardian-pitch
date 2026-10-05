@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Guardian Agent: Dark, cloud vs on the PC</title>
+<link rel="stylesheet" href="common.css">
+<style>
+  html { color-scheme: dark; }
+  html, body { background: #111112; }
+  .slide { color: #eeeeef;
+    background: radial-gradient(90% 70% at 75% -10%, rgb(56 189 248 / 0.20), transparent 60%),
+                radial-gradient(60% 60% at 0% 110%, rgb(120 132 150 / 0.12), transparent 70%),
+                linear-gradient(180deg, #19191a, #111112 60%); }
+  .lockup { position: absolute; left: 112px; top: 76px; color: #eeeeef; }
+  h1 { position: absolute; left: 112px; top: 186px; width: 980px; font-size: 108px; color: #eeeeef; }
+  h1 em { font-style: normal; color: #40c3fe; }
+  .lead { position: absolute; left: 112px; top: 440px; width: 920px; font-size: 34px; line-height: 1.3; color: #b4b4b5; }
+  .lead b { color: #eeeeef; font-weight: 600; }
+  .ico { fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+  .proof { position: absolute; left: 112px; top: 596px; display: flex; gap: 40px; align-items: flex-start; }
+  .proof > div { font-size: 26px; line-height: 1.25; color: #b4b4b5; }
+  .proof .stat { width: 240px; }
+  .proof b.n { display: block; font-family: var(--head); font-size: 96px; line-height: 1; letter-spacing: -0.03em; color: #40c3fe; margin-bottom: 10px; }
+  .proof .price { width: 200px; }
+  .proof .price .src { font-size: 20px; }
+  .proof .price b.n { font-size: 72px; padding-top: 20px; }
+  .proof .price strong { color: #eeeeef; font-weight: 600; }
+
+  /* Cloud tools vs Guardian Agent, in parent words */
+  .vs { width: 500px; border-radius: 14px; border: 1px solid #313132; background: #19191a; overflow: hidden; font-size: 21px !important; }
+  .vs .row { display: grid; grid-template-columns: 120px 160px 1fr; align-items: center; min-height: 76px; white-space: nowrap; }
+  .vs .row + .row { border-top: 1px solid #313132; }
+  .vs .row > * { padding: 10px 14px; }
+  .vs .head { font-size: 18px; color: #8e8e8f; min-height: 50px; }
+  .vs .head .us { color: #40c3fe; font-weight: 600; }
+  .vs .k { color: #8e8e8f; font-size: 18px; white-space: normal; }
+  .vs .them { color: #b4b4b5; }
+  .vs .us { color: #eeeeef; font-weight: 600; background: rgb(0 44 67 / 0.6); align-self: stretch; display: flex; align-items: center; gap: 8px; }
+  .vs .us svg { width: 20px; height: 20px; color: #40c3fe; flex: none; }
+
+  .app { position: absolute; left: 1210px; top: 20px; width: 560px; height: 760px; border: 0; color-scheme: dark; }
+  .alert { position: absolute; left: 1150px; top: 590px; }
+  .alert .notif { background: #fff; font-size: 26px; width: 23em; box-shadow: 0 28px 56px -18px rgb(0 0 0 / 0.7), 0 6px 16px -6px rgb(0 0 0 / 0.5); }
+  .team { position: absolute; left: 112px; bottom: 48px; display: flex; align-items: center; gap: 22px; font-size: 24px; }
+  .team img { height: 140px; width: auto; transform: rotate(-2.5deg); box-shadow: 0 14px 28px -12px rgb(0 0 0 / 0.45), 0 2px 6px -2px rgb(0 0 0 / 0.25); }
+  .team b { display: block; font-weight: 600; color: #eeeeef; }
+  .team span { display: block; color: #b4b4b5; }
+  .qr { position: absolute; right: 112px; bottom: 48px; width: 140px; }
+  .src { color: #8e8e8f; font-size: 16px; }
+</style>
+</head>
+<body>
+<main class="slide">
+  <div class="lockup"><img src="../assets/logo.svg" alt="">Guardian Agent</div>
+  <h1>Let your kids play <em>safely</em> online.</h1>
+  <p class="lead">Real-time grooming detection for game chat. <b>Our AI works right on your child's PC.</b></p>
+
+  <div class="proof">
+    <div class="stat"><b class="n">+89%</b>online grooming crimes in 6 years<br><span class="src">NSPCC, 2023</span></div>
+    <div class="vs">
+      <div class="row head"><span></span><span>Cloud tools</span><span class="us">Guardian Agent</span></div>
+      <div class="row"><span class="k">Chats</span><span class="them">uploaded</span><span class="us"><svg class="ico" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>stay on the PC</span></div>
+      <div class="row"><span class="k">Running cost</span><span class="them">paid per user</span><span class="us"><svg class="ico" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>€0 cloud</span></div>
+    </div>
+    <div class="price"><b class="n">€6.99</b>a month, from Nov.<br><strong>Family €12.99</strong><br><span class="src">most chosen plan</span></div>
+  </div>
+
+  <iframe class="app" src="../assets/app/status.html#dark" title="Guardian Agent status window" scrolling="no"></iframe>
+
+  <div class="alert">
+    <div class="notif">
+      <img class="notif__icon" src="../assets/app-icon.svg" alt="">
+      <div class="notif__main">
+        <div class="notif__head"><span>Guardian Agent</span><span>now</span></div>
+        <div class="notif__title">Fortnite: possible grooming</div>
+        <div class="notif__body">Someone asked your child to meet in person.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="team"><img src="../assets/team-polaroid.png" alt=""><div><div class="people"><div><b>Marom Sverdlov</b><span>Founding Engineer @ Biscuit</span></div><div><b>Oliver van Erven</b><span>AI Engineer @ Prosus</span></div></div><span class="deg">Both MSc AI graduates, UvA</span></div></div>
+  <div class="qr"><img src="../assets/qr-beta.png" alt="QR code to the beta"></div>
+</main>
+</body>
+</html>

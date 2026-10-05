@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Guardian Agent: The Alert</title>
+<link rel="stylesheet" href="common.css">
+<style>
+  .slide { background: #fff; }
+  .band { position: absolute; left: 0; right: 0; top: 404px; height: 380px; background: var(--sky-pale); }
+  .lockup { position: absolute; left: 96px; top: 72px; }
+  .beta { display: flex; align-items: center; justify-content: flex-end; gap: 22px; }
+  .beta span { font-family: var(--head); font-weight: 700; font-size: 30px; text-align: right; line-height: 1.1; }
+  .beta .qr { width: 150px; box-shadow: 0 0 0 2px var(--line); }
+  h1 { position: absolute; left: 0; right: 0; top: 200px; text-align: center; font-size: 108px; color: var(--ink); }
+  h1 em { font-style: normal; color: var(--sky-ink); }
+  .hero { position: absolute; left: 50%; top: 452px; transform: translateX(-50%); }
+  .hero .notif { font-size: 44px; width: 27.5em; }
+  .tag { position: absolute; left: 0; right: 0; top: 818px; text-align: center; font-size: 36px; font-weight: 500; color: var(--ink-2); }
+  .tag b { color: var(--ink); font-weight: 600; }
+  .foot { position: absolute; left: 96px; right: 96px; bottom: 48px; display: grid; grid-template-columns: 1fr auto 1fr; align-items: end; }
+  .schools img { height: 104px; }
+  .team { display: flex; align-items: center; gap: 20px; font-size: 26px; font-weight: 500; }
+  .team img { height: 150px; width: auto; transform: rotate(-2.5deg); box-shadow: 0 14px 28px -12px rgb(0 0 0 / 0.45), 0 2px 6px -2px rgb(0 0 0 / 0.25); }
+  .team b { display: block; font-weight: 600; color: var(--ink); }
+  .team span { display: block; color: var(--ink-2); }
+  .launch { position: absolute; right: 96px; top: 70px; text-align: right; font-size: 26px; color: var(--ink-2); }
+  .launch b { display: block; font-family: var(--head); font-size: 34px; color: var(--ink); }
+</style>
+</head>
+<body>
+<main class="slide">
+  <div class="band"></div>
+  <div class="lockup"><img src="../assets/logo.svg" alt="">Guardian Agent</div>
+  <div class="launch"><b>Launching November</b>From €6.99 a month</div>
+
+  <h1>Who is your kid talking to <em>online?</em></h1>
+
+  <div class="hero">
+    <div class="notif">
+      <img class="notif__icon" src="../assets/app-icon.svg" alt="">
+      <div class="notif__main">
+        <div class="notif__head"><span>Guardian Agent</span><span>now</span></div>
+        <div class="notif__title">Fortnite: possible grooming</div>
+        <div class="notif__body">Someone asked your child to meet in person.</div>
+      </div>
+    </div>
+  </div>
+
+  <p class="tag">Detected in real time. <b>Runs on your child's PC. Nothing else leaves it.</b></p>
+
+  <div class="foot">
+    <div class="schools"><img src="../assets/schools.png" alt="UWC Maastricht, ISA, The International School of The Hague"></div>
+    <div class="team"><img src="../assets/team-polaroid.png" alt=""><div><div class="people"><div><b>Marom Sverdlov</b><span>Founding Engineer @ Biscuit</span></div><div><b>Oliver van Erven</b><span>AI Engineer @ Prosus</span></div></div><span class="deg">Both MSc AI graduates, UvA</span></div></div>
+    <div class="beta"><span>Join<br>the beta</span><div class="qr"><img src="../assets/qr-beta.png" alt="QR code to the beta"></div></div>
+  </div>
+</main>
+</body>
+</html>

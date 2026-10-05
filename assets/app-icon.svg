@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+  <title>Guardian Agent app icon (large sizes)</title>
+  <!--
+    The winged mark on a neutral-1 (#111112) rounded square, on Apple's 1024 grid (824 square at 100, radius
+    185), with a faint sky-blue glow behind the mark and a hairline neutral-5 edge so it still reads on a dark
+    Dock or taskbar. The <g id="mark"> below is a copy of mark-winged.svg's (a test keeps them identical).
+    Used from 64 px up (128 px for the 32 pt icns slot); app-icon-small.svg covers the smaller sizes.
+  -->
+  <defs>
+    <linearGradient id="bg" gradientUnits="userSpaceOnUse" x1="0" y1="100" x2="0" y2="924">
+      <stop offset="0" stop-color="#1b1b1d"/>
+      <stop offset="1" stop-color="#111112"/>
+    </linearGradient>
+    <radialGradient id="glow" gradientUnits="userSpaceOnUse" cx="512" cy="512" r="400">
+      <stop offset="0" stop-color="#38bdf8" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#38bdf8" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect x="100" y="100" width="824" height="824" rx="185" fill="url(#bg)"/>
+  <rect x="100" y="100" width="824" height="824" rx="185" fill="url(#glow)"/>
+  <rect x="102" y="102" width="820" height="820" rx="183" fill="none" stroke="#313132" stroke-width="4"/>
+  <g transform="matrix(3.8 0 0 3.8 512 355.44)">
+    <g id="mark">
+      <defs>
+        <mask id="gap" maskUnits="userSpaceOnUse" x="-100" y="0" width="200" height="84">
+          <rect x="-100" y="0" width="200" height="84" fill="#fff"/>
+          <polygon points="-28.05,48 0,48 0,78.22 -28.05,53.61" fill="#000"/>
+        </mask>
+        <g id="wing" mask="url(#gap)">
+          <path fill="none" d="M-24.5 45.5 L-38.2 30.2 C-67 26.3 -82 17.4 -92 10.5 C-91.5 16.5 -83.6 26 -78.6 31.8 L-45 38.6 L-24.8 58"/>
+          <g stroke="none">
+            <polygon points="-76.18,39 -67.13,48.05 -36,48.05 -36,43.55 -65.27,43.55 -69.82,39"/>
+            <polygon points="-63.38,52.3 -55.12,60.56 -17.73,56.09 -18.27,51.63 -53.48,55.84 -57.02,52.3"/>
+            <polygon points="-49.38,62.3 -41.89,69.8 -17.06,58.45 -18.94,54.35 -40.91,64.4 -43.02,62.3"/>
+          </g>
+        </g>
+        <path id="arm" d="M-23.016 21.309 L-3.5 38.436 L-3.5 54.95 L-8 51 L-8 40.474 L-25.984 24.691 Z"/>
+      </defs>
+      <g fill="#38bdf8" stroke="#38bdf8" stroke-width="4.5" stroke-miterlimit="8">
+        <polygon fill="none" points="0,10.75 24.5,23 24.5,52 0,73.5 -24.5,52 -24.5,23"/>
+        <use href="#wing"/>
+        <use href="#wing" transform="scale(-1 1)"/>
+        <use href="#arm" stroke="none"/>
+        <use href="#arm" stroke="none" transform="scale(-1 1)"/>
+      </g>
+    </g>
+  </g>
+</svg>

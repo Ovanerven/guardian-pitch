@@ -1,0 +1,53 @@
+/* Shared base for the one-slide pitch variants (1920x1080). Fonts and sky tokens follow docs/DESIGN.md; the text greys are slide-specific. */
+@font-face { font-family: "Inter"; font-weight: 400; src: url("../assets/app/fonts/Inter-Regular.woff2") format("woff2"); }
+@font-face { font-family: "Inter"; font-weight: 500; src: url("../assets/app/fonts/Inter-Medium.woff2") format("woff2"); }
+@font-face { font-family: "Inter"; font-weight: 600; src: url("../assets/app/fonts/Inter-SemiBold.woff2") format("woff2"); }
+@font-face { font-family: "Space Grotesk"; font-weight: 600; src: url("../assets/app/fonts/SpaceGrotesk-SemiBold.woff2") format("woff2"); }
+@font-face { font-family: "Space Grotesk"; font-weight: 700; src: url("../assets/app/fonts/SpaceGrotesk-Bold.woff2") format("woff2"); }
+
+:root {
+  --sky: #38bdf8;
+  --sky-deep: #0284c7;
+  --sky-ink: #006fa2;
+  --sky-mist: #f2faff;
+  --sky-pale: #e3f5ff;
+  --navy: #0a2532;
+  --ink: #111827;
+  --ink-2: #4b5563;
+  --line: #e5e9ef;
+  --head: "Space Grotesk", "Inter", system-ui, sans-serif;
+  --body: "Inter", system-ui, sans-serif;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; background: #fff; }
+body { width: 1920px; height: 1080px; overflow: hidden; font-family: var(--body); color: var(--ink);
+  -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+.slide { position: relative; width: 1920px; height: 1080px; overflow: hidden; }
+h1, h2, h3, p { margin: 0; }
+h1, h2, h3 { font-family: var(--head); font-weight: 700; letter-spacing: -0.02em; line-height: 1.02; }
+img { display: block; }
+
+/* Brand lockup */
+.lockup { display: flex; align-items: center; gap: 18px; font-family: var(--head); font-weight: 700; font-size: 34px; letter-spacing: -0.01em; }
+.lockup img { height: 52px; }
+
+/* Parent alert, as it lands on the parent's phone */
+.notif { display: flex; gap: 0.75em; align-items: flex-start; width: 23em; padding: 0.95em 1.15em 1.05em;
+  font-size: 26px; line-height: 1.3; color: #111; background: rgb(255 255 255 / 0.96); border-radius: 1.25em;
+  box-shadow: 0 1.4em 2.6em -1em rgb(10 37 50 / 0.38), 0 0.3em 0.8em -0.3em rgb(10 37 50 / 0.2); }
+.notif__icon { width: 2.3em; height: 2.3em; border-radius: 0.55em; flex: none; }
+.notif__main { flex: 1; min-width: 0; }
+.notif__head { display: flex; justify-content: space-between; font-size: 0.78em; font-weight: 500; color: #6b7280; }
+.notif__title { font-weight: 600; margin-top: 0.12em; }
+.notif__body { color: #374151; }
+
+.qr { background: #fff; border-radius: 18px; padding: 12px; }
+.qr img { width: 100%; height: auto; image-rendering: pixelated; }
+.src { font-size: 16px; color: var(--ink-2); }
+
+/* Team credit: two columns (name over role) or stacked rows (role next to name), degree line underneath */
+.team .people { display: grid; grid-template-columns: auto auto; column-gap: 40px; }
+.team .who b { display: inline; margin-right: 0.4em; }
+.team .who, .team .deg { display: block; }
+.team .deg { margin-top: 8px; }

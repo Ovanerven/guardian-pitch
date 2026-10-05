@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-96 4.6 192 73.2">
+  <title>Guardian Agent mark (winged hexagon shield)</title>
+  <!--
+    Traced from the guardianagent.me logo (logo.png and the site's rendering), made symmetric: every part is
+    drawn once for the left half and mirrored. Units: 1 = 1 px of the site's 1440 px wide rendering. Strokes are
+    4.5 wide with miter joins. Stand-in until the original vector logo replaces it.
+
+    Geometry, left half:
+    - Hexagon: pointed top (0,10.75), shoulders (+-24.5,23), sides down to (+-24.5,52), point (0,73.5).
+    - Arm + stem: from the shoulder, parallel to the lower hexagon edge, into a vertical stem at x=-5.75 whose
+      tip is cut parallel to that edge again.
+    - Wing: one stroke runs from the hexagon side up to the wing tip (curved top edge) and back down the curved
+      leading edge, then right and diagonally down (the "spine"). Three feathers hang under it: each starts with
+      a horizontal cut, runs down at 45 degrees, then turns towards the hexagon. They are outlines of 4.5 wide
+      strokes along these centre lines: (-73,39)(-66.2,45.8)(-36,45.8); (-60.2,52.3)(-54.3,58.2)(-18,53.86);
+      (-46.2,62.3)(-41.4,67.1)(-18,56.4).
+    - A 1.3 wide gap keeps the spine and the lower feathers off the hexagon's lower edge (mask "gap").
+  -->
+  <g id="mark">
+    <defs>
+      <mask id="gap" maskUnits="userSpaceOnUse" x="-100" y="0" width="200" height="84">
+        <rect x="-100" y="0" width="200" height="84" fill="#fff"/>
+        <polygon points="-28.05,48 0,48 0,78.22 -28.05,53.61" fill="#000"/>
+      </mask>
+      <g id="wing" mask="url(#gap)">
+        <path fill="none" d="M-24.5 45.5 L-38.2 30.2 C-67 26.3 -82 17.4 -92 10.5 C-91.5 16.5 -83.6 26 -78.6 31.8 L-45 38.6 L-24.8 58"/>
+        <g stroke="none">
+          <polygon points="-76.18,39 -67.13,48.05 -36,48.05 -36,43.55 -65.27,43.55 -69.82,39"/>
+          <polygon points="-63.38,52.3 -55.12,60.56 -17.73,56.09 -18.27,51.63 -53.48,55.84 -57.02,52.3"/>
+          <polygon points="-49.38,62.3 -41.89,69.8 -17.06,58.45 -18.94,54.35 -40.91,64.4 -43.02,62.3"/>
+        </g>
+      </g>
+      <path id="arm" d="M-23.016 21.309 L-3.5 38.436 L-3.5 54.95 L-8 51 L-8 40.474 L-25.984 24.691 Z"/>
+    </defs>
+    <g fill="#38bdf8" stroke="#38bdf8" stroke-width="4.5" stroke-miterlimit="8">
+      <polygon fill="none" points="0,10.75 24.5,23 24.5,52 0,73.5 -24.5,52 -24.5,23"/>
+      <use href="#wing"/>
+      <use href="#wing" transform="scale(-1 1)"/>
+      <use href="#arm" stroke="none"/>
+      <use href="#arm" stroke="none" transform="scale(-1 1)"/>
+    </g>
+  </g>
+</svg>
